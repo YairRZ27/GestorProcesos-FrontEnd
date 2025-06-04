@@ -1,6 +1,5 @@
 const API_BASE_URL = 'http://localhost:8001'; // Usar la URL base real del backend
 
-// Login: autenticación HTTP Basic, obtiene usuario si las credenciales son correctas
 export async function apiLogin(email, password) {
     const response = await fetch(`${API_BASE_URL}/usuarios/login`, {
         method: 'GET',
@@ -54,8 +53,6 @@ export async function apiRegister(email, password) {
     return response.json();
 }
 
-// Perfil: obtiene datos del usuario autenticado
-// Esta función ESPERA que se le PASE un token válido.
 export async function apiGetUserProfile(token) {
     const userId = localStorage.getItem('userId');
     if (!userId) {
@@ -80,9 +77,7 @@ export async function apiGetUserProfile(token) {
     return response.json();
 }
 
-// ==================== PROCESOS ====================
 
-// Crear proceso
 export async function apiCrearProceso(proceso, token) {
     const response = await fetch(`${API_BASE_URL}/procesos/`, {
         method: 'POST',
