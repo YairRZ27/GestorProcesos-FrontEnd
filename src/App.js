@@ -104,9 +104,6 @@ function App() {
                     setCurrentPage={setCurrentPage}
                 />
             </main>
-            <footer className="bg-slate-800 text-center p-4 text-sm text-slate-500">
-                © {new Date().getFullYear()} Mi Aplicación Moderna. Todos los derechos reservados. AppID: {appId}
-            </footer>
         </div>
     );
 }
